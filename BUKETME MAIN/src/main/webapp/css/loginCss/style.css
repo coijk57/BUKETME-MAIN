@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&display=swap");
+/*screen*/
+@import "screen/payInfo.css";
+
+body{
+    margin: 0px;
+    color: #fff;
+    background-color: rgb(26, 29, 41);
+}
+
+a {
+    text-decoration: none;
+}

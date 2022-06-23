@@ -1,0 +1,343 @@
+@charset "UTF-8";
+/*
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://cdn.jsdelivr.net/font-nanum/1.0/nanumbarungothic/nanumbarungothic.css);
+*/
+html{
+	overflow:scorll;
+}
+
+.container h1, .container h3 {
+	font-size: 1.5em;
+}
+
+#paging a:link, #paging a:visited {
+	text-decoration:none;
+	color: #656565;
+}
+
+.container {
+	min-width:70%;
+	margin: auto;
+	margin-top: 30px;
+	text-align: center;
+}
+
+.container h2 {
+	font-size:28px;
+}
+
+.board_list {
+	width:100%;
+	border-top:3px solid #252525;
+	border-bottom:1px solid #ccc;
+	margin:auto;
+	border-collapse: collapse;
+}
+
+.board_list thead th:first-child {
+	background-image:none;
+}
+
+.board_list thead th {
+	border-bottom:1px solid #ccc;
+	padding:6px 0;
+	color:#3b3a3a;
+	text-align: center;
+	vertical-align:middle;
+}
+
+.board_list tbody td {
+	border-top:1px solid #ccc;
+	padding:15px 0;
+	text-align:center;
+	vertical-align:middle;
+}
+
+.board_list tbody tr:first-child td {
+	border:none;
+}
+
+/*.board_list tbody tr:hover{background:#ccc;}*/
+
+.board_list tbody td.title {
+	text-align:left;
+	padding-left:20px;
+}
+
+.board_list tbody td a {
+	display:inline-block;
+}
+
+
+
+
+
+.board_search {
+	height: 30px;
+	margin: 30px;
+}
+/*
+.board_search .filter {
+	float: left;
+    width: 5%;
+    text-align: center;
+}
+*/
+.board_search .list_title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+}
+/*
+.board_search .search_area {
+	float: right;
+	width: 15%;
+}
+
+
+
+.board_list_userTitleIcon {
+    color: rgb(26, 29, 41);
+    display: inline-block;
+    margin: 0px 7px;
+}
+
+
+.board_search .board_searchBox {
+	float: right;
+    padding: 10px;
+    height: 30px;
+    color: #fff;
+    background-color: #fff;
+    border-radius: 30px;
+    transition: 0.4s;
+    width: 30px;
+}
+.board_search .board_searchBox:hover {
+    box-shadow: 0px 0px 0.5px 1px rgb(26, 29, 41);
+    width: 162px;
+}
+.board_search .board_searchBtn {
+    text-decoration: none;
+    float: right;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.board_search .board_searchBox:hover > .board_searchText {
+    width: 120px;
+    padding: 0 6px;
+}
+
+.board_search .board_searchText {
+    display: flex;
+    padding: 0;
+    width: 0px;
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    font-size: 1rem;
+    line-height: 30px;
+    transition: 0.4s;
+}
+*/
+
+
+
+
+#paging {
+	margin: 30px auto;	
+}
+
+/*
+#paging { text_align:center; float:left; line_height:15px; position:absolute; left:50%; transform:translateX(-50%); top:85%;}
+#paging a.prev {font:8pt verdana; color:#555555}
+#paging .selected {font_weight:bold; color:#555555}
+#paging a.num {border:#AAAAAA 1px solid; background-color:#FFFFFF; color:#555555; padding:3px 6px; margin:3px; font: 8pt verdana}
+#paging a:hover.num {border:#555555 1px solid}
+*/
+
+#browsers{
+	display: inline-block;
+	font: inherit;
+	line-height: 1.5em;
+	padding: 0.5em 1.5em 0.5em 1em;
+	border: none;
+	border-radius: 0;
+	
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background: no-repeat 80% 50%;
+	background-image:
+	linear-gradient(45deg, transparent 50%, gray 50%),
+	linear-gradient(135deg, gray 50%, transparent 50%);
+	background-position:
+	calc("100% - 20px") calc("1em + 2px"),
+	calc("100% - 15px") calc("1em + 2px"),
+	calc("100% - .5em") .5em;
+	background-size:
+	5px 5px,
+	5px 5px,
+	1.5em 1.5em;
+}
+input:focus, select:focus, option:focus, textarea:focus, button:focus{
+	outline: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.input-group {
+	display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 500px;
+    margin: auto;
+}
+
+.input-group-prepend {
+	display: flex;
+	margin-right: -1px;
+}
+
+::after, ::before {
+    box-sizing: border-box;
+}
+
+.intput-group>.intput-group-prepend>.btn {
+	position: relative;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    background-color: transparent;
+    background-image: none;
+    
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    border-color: #6c757d;
+    border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show>.btn-outline-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+.dropdown-menu {
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu[x-placement^=bottom] {
+    right: auto;
+    bottom: auto;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.input-group>.form-control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-group>.form-control {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+}
+
+.form-control {
+    display: block;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}

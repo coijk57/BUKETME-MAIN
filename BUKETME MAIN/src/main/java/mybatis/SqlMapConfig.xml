@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<typeAliases>
+		<typeAlias type="kr.co.ezenac.orm04.MemberVO" alias="memberVO"/>
+		<typeAlias type="kr.co.ezenac.membership.MembershipVO" alias="membershipVO"/>
+		<typeAlias type="kr.co.ezenac.profile.ProfileVO" alias="profileVO"/>
+		<typeAlias type="kr.co.ezenac.videoInfo.VideoInfoVO" alias="videoInfoVO"/>
+		<typeAlias type="kr.co.ezenac.likeMedia.LikeMediaVO" alias="likeMediaVO"/>
+		<typeAlias type="kr.co.ezenac.videoRecord.VideoRecordVO" alias="videoRecordVO"/>
+		<typeAlias type="kr.co.ezenac.category.CategoryVO" alias="categoryVO"/>
+		<typeAlias type="kr.co.ezenac.likeCategory.LikeCategoryVO" alias="likeCategoryVO"/>
+		<typeAlias type="kr.co.ezenac.userManage.UserManageVO" alias="userManageVO"/>
+		<typeAlias type="kr.co.ezenac.userRating.UserRatingVO" alias="userRatingVO"/>
+	</typeAliases>
+
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+				<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+				<property name="username" value="wdsql"/>
+				<property name="password" value="0311"/>
+			</dataSource>
+		</environment>	
+	</environments>
+	
+	<mappers>
+		<mapper resource="mybatis/mappers/member.xml" />
+		<mapper resource="mybatis/mappers/membership.xml" />
+		<mapper resource="mybatis/mappers/profile.xml" />
+		<mapper resource="mybatis/mappers/videoInfo.xml" />
+		<mapper resource="mybatis/mappers/likeMedia.xml" />
+		<mapper resource="mybatis/mappers/videoRecord.xml" />
+		<mapper resource="mybatis/mappers/category.xml" />
+		<mapper resource="mybatis/mappers/likeCategory.xml" />
+		<mapper resource="mybatis/mappers/userManage.xml" />
+		<mapper resource="mybatis/mappers/userRating.xml"/>
+	</mappers>
+</configuration>  
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.likeCategory">
+		<resultMap type="likeCategoryVO" id="likeCategoryResult">
+			<result property="likeCategoryNo" column="LIKECATEGORYNO" />
+			<result property="likeCategoryName" column="LIKECATEGORYNAME" />
+	</resultMap>
+
+	<select id="selectLikeCategoryName" resultType="String">
+		SELECT LIKECATEGORYNAME FROM LIKECATEGORY 
+		 WHERE LIKECATEGORYNO IN
+		 <foreach collection="likecategoryno" item="no" open="(" close=")" separator=",">
+		 	#{no}
+		 </foreach>
+	</select>
+
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

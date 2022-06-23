@@ -1,0 +1,91 @@
+.contentsUpLoadSpace{
+    margin-top: 40px;
+    width: 450px;
+    height: 560px;
+    background-color: rgb(26, 29, 41);
+}
+
+.contentsUpLoadBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 410px;
+    height: 520px;
+    background-color: #FFFFFF;
+    margin: 20px;
+    border: 1px solid white;
+}
+
+.contentsUpLoadBoxIcon{
+    color: rgb(26, 29, 41);
+    display: flex;
+    justify-content: center;
+}
+
+
+.contentsUpLoadBoxBtn{
+	cursor: pointer;
+    width: 300px;
+    height: 70px;
+    margin-left: 55px;
+    margin-top: 80px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #EDAE47;
+    border: none;
+}
+
+.loginStatusBox{
+    margin-top: 40px;
+    margin-left: 40px;
+    width: 400px;
+    height: 470px;
+    border: 15px solid rgb(26, 29, 41);
+}
+
+.loginStatusBox > h2 {
+    margin-left: 15px;
+    margin-bottom: 30px;
+}
+
+.userComponent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+.userComponent,
+.userComponentColumn:first-child {
+    display: flex;
+}
+
+.userComponentColumn {
+	cursor: pointer;
+	display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.userComponentImage {
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+    margin-right: 10px;
+    background-color: rgb(26, 29, 41);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.userComponentName {
+	margin-top: 0px;
+    margin-bottom: 2px;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.userComponentStatus {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 15px;
+    color: rgba(0, 0, 0, 0.5);
+}

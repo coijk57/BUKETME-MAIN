@@ -1,0 +1,213 @@
+body {
+   font-family: "Noto Sans KR", sans-serif;
+}
+
+a {
+  text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+  text-decoration: none;
+     color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6, .font-primary {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.main {
+	font-size: 25px;
+	text-align: center;
+	 text-decoration: none;
+    color: #000000;
+}
+.sidebar {
+    list-style: none;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	justify-content: left;
+}
+
+.tags {
+	display: flex;
+}
+
+.home a {
+	margin : 2%;
+	font-size: 20px;
+	text-decoration: none;
+    color: #ff0000;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  color: #041c32;
+}
+.tags > .box {
+	flex: 25%;
+	justify-content: center;
+}
+
+.tags ul {
+  list-style: none;
+  padding: 0;
+}
+.tags ul li {
+  display: inline-block;
+}
+.tags ul a {
+   text-decoration: none;
+    color: #000000;
+  font-size: 20px;
+  padding: 6px 14px;
+  margin: 0 6px 8px 0;
+  border: 1px solid #f1592a;
+  display: inline-block;
+  transition: 0.3s;
+}
+.tags ul a:hover {
+  color: #000000;
+  border: 1px solid #000000;
+  background: #ff6768;
+}
+.tags ul a span {
+ padding-left: 5px;
+  color: #ff6768;
+  font-size: 14px;
+}
+
+.recent-posts h4 a {
+   color: #bedae8;
+  transition: 0.3s;
+}
+
+.recent-posts h4 a:hover {
+  color: #bedae8;
+}
+
+.block {
+	margin: 15%;
+}
+.box > h5 {
+	margin: 2%;
+	font-size: 15px;
+	text-align: left;
+	text-decoration: none;
+     color: #000000;
+}
+
+.box > h4 {
+	margin: 2%;
+	font-size: 25px;
+  font-weight: bold;
+  text-align: left;
+  text-decoration: none;
+     color: #000000;
+}
+
+.login-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    border-bottom: transparent;
+    background-color: rgb(26, 29, 41);
+}
+
+.logo-area {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.logo-icon {
+    font-size: 30px;
+    font-weight: 900;
+    color: #f1592a;
+}
+
+.manage {
+	display: flex;
+	background-color:  rgb(26, 29, 41);
+}
+
+.manage ul {
+  list-style: none;
+  padding: 0;
+  list-style-type: none;
+   text-decoration: none;
+    color: #fff;
+}
+
+.manage ul li {
+  display: inline-block;
+  list-style-type: none;
+   text-decoration: none;
+    color: #fff;
+}
+
+.manage ul a {
+   background-color: #f1592a;
+  font-size: 14px;
+  padding: 6px 14px;
+  margin: 0 6px 8px 0;
+  border: 1px solid #f1592a;
+  display: inline-block;
+  transition: 0.3s;
+   text-decoration: none;
+    color: #fff;
+}
+
+.manage ul a:hover {
+  color: #000000;
+  border: 1px solid #000000;
+  background: #ff6768;
+}
+
+.manage ul a span {
+  padding-left: 5px;
+  color: #ff6768;
+  font-size: 14px;
+}
+
+.manage > .manage_box {
+	margin: 1%;
+	display: flex;
+	flex: 25%;
+	justify-content: right;
+}
+
+.manage > .manage_list {
+	margin: 1.5%;
+	justify-content: left;
+}
+
+.searchbar input {
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+
+.searchbar submit {
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: 1px solid lightgray;
+    outline: none;
+    color: #ff6768;
+   justify-content: center;
+	float:center;
+}
+

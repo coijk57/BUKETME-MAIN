@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.member">
+<!-- property는 memberVO에서 사용하는 변수, column은 db에서 사용하는 변수 -->
+		<resultMap type="memberVO" id="memResult">
+			<result property="registerNum" column="REGISTERNUM" />
+			<result property="managerCheck" column="MANAGERCHECK" />
+			<result property="email" column="EMAIL" />
+			<result property="password" column="PASSWORD" />
+			<result property="phoneNum" column="PHONENUM" />
+			<result property="name" column="NAME" />
+			<result property="gender" column="GENDER" />
+			<result property="birthday" column="BIRTHDAY" />
+			<result property="instrument" column="INSTRUMENT" />
+			<result property="memCode" column="MEMCODE" />
+			<result property="joinDate" column="JOINDATE" />
+
+	</resultMap>
+
+	<!-- REGISTERNUM이 최대일때 확인하는 sql문(중복확인) resultType: 출력 타입, parameterType: 가져올 타입-->
+	<select id="selectMaxRegisterNum" resultType="int">
+		<![CDATA[
+			SELECT max(REGISTERNUM) FROM USERINFO u
+		]]>
+	</select>
+
+	<select id="countByEmail" resultType="int"
+		parameterType="String">
+		<![CDATA[
+			SELECT COUNT(1) FROM USERINFO u
+            WHERE EMAIL = #{email}
+		]]>
+	</select>
+
+	<insert id="insertMember" parameterType="memberVO">
+		<![CDATA[
+			insert into userinfo
+			values (#{registerNum}, #{managerCheck}, #{email}, #{password}, #{phoneNum}, #{name}, #{gender}, #{birthday}, #{instrument}, #{memCode}, #{joinDate})
+		]]>
+	</insert>
+	
+	<update id="updateMember" parameterType="java.util.HashMap">
+		<![CDATA[
+			update userinfo set memcode = #{memCode} where email = #{email}
+		]]>
+	</update>
+	
+	<select id="findRasiterNum" resultType="int"
+		parameterType="String">
+		<![CDATA[
+			SELECT REGISTERNUM FROM USERINFO u
+            WHERE EMAIL = #{email}
+		]]>
+	</select>
+	
+	<select id="selectAllUser" resultMap="memResult">
+		<![CDATA[
+			SELECT * FROM USERINFO ORDER BY REGISTERNUM
+		]]>
+	</select>
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

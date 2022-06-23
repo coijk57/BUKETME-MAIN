@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+body{
+    background-color: rgb(26, 29, 41);
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}
+
+#profile-main {
+    align-items: center;
+    text-align: center;
+    display: flex;
+    height: 900px;
+    justify-content: center;
+    color: white;
+}
+
+#section {
+	height: 1000px;
+}
+
+.profile-list {
+    align-items: flex-start;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 42px auto;
+    padding: 0px;
+    width: 100%;
+}
+
+.profile-area {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    margin: 30px;
+    padding: 0px;
+}
+
+
+
+#man{
+    width: 150px;
+    margin-right: 50px;
+}
+
+#section {
+    color: white;
+	margin-top: 50px;
+    align-items: center;
+}
+
+
+#profileadd>form>hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#add{
+    margin-top: 150px;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+#Write{
+    width: 300px;
+    height: 30px;
+    float: right;
+    border-radius: 10px;
+    margin-top: 60px;
+}
+
+#input{
+    text-align: right;
+}
+
+
+
+#next{
+    margin-right: 5px;
+    width: 120px;
+    height: 40px;
+    border:none;
+    border-radius: 10px;
+    font-size: 16px;
+    color:#fff;
+    background: #f1592a;
+}
+
+#cancel{
+    width: 120px;
+    height: 40px;
+    border:none;
+    border-radius: 10px;
+    font-size: 16px;
+    color:#fff;
+    background: #f1592a;
+
+}

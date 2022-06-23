@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.userManage">
+		<resultMap type="userManageVO" id="userManageResult">
+			<result property="registerNum" column="REGISTERNUM" />
+			<result property="available_date" column="AVAILABLE_DATE" />
+			<result property="subscriptionstatus" column="SUBSCRIPTIONSTATUS" />
+	</resultMap>
+	
+	<select id="selectAllManage" resultMap="userManageResult">
+		SELECT * FROM USERMANAGE ORDER BY REGISTERNUM
+	</select>
+
+	<update id="subCancel" parameterType="int">
+		<![CDATA[
+			update USERMANAGE
+			set SUBSCRIPTIONSTATUS='구독해지'
+			where 
+			REGISTERNUM = #{registerNum}
+		]]>
+	</update>
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

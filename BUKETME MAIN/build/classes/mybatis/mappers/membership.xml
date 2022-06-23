@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.membership">
+	<resultMap type="membershipVO" id="membershipResult">
+		<result property="memCode" column="MEMCODE" />
+		<result property="membership" column="MEMBERSHIP" />
+		<result property="sameWatch" column="SAMEWATCH" />
+		<result property="price" column="PRICE" />
+	</resultMap>
+
+	<!-- REGISTERNUM이 최대일때 확인하는 sql문(중복확인) resultType: 출력 타입, parameterType: 가져올 타입-->
+	<select id="selectMaxRegisterNum" resultType="int">
+		<![CDATA[
+			SELECT max(REGISTERNUM) FROM USERINFO u
+		]]>
+	</select>
+
+	<select id="selectMembership" resultMap="membershipResult">
+		<![CDATA[
+			SELECT MEMCODE as memCode, 
+				MEMBERSHIP as membership, 
+				SAMEWATCH as sameWatch, 
+				PRICE as price 
+				FROM MEMBERSHIP m
+		]]>
+	</select>
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

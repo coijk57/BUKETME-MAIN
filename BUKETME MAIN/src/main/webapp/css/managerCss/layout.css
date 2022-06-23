@@ -1,0 +1,107 @@
+@charset "UTF-8";
+	
+	html,
+	body {
+		height: 100%;
+		width: 100%;
+	}
+	.wrapper{ 
+		width: 100%;
+		height: 100%;
+	 }
+	.wrapper .header_wrap {
+	    width: 100%;
+	    height: 76px;
+	}
+	
+	header {
+      z-index:1;
+	  position: fixed;
+	  top: 0; left: 0;
+	  height: 60px;
+	  width: 100%;
+	  background-color: #041c32; 
+	  padding-top: 20px;
+	  margin: auto;
+	  padding: 8px;
+	/*   float: left; */
+	}
+	header > a {
+		color: #EDAE47;
+		font-size: 40px;
+		text-decoration: none;
+	}
+	
+	a > img {
+		height: 60px;
+	}	
+		
+	.left-menu{
+		position: absolute;
+    	border-right: solid 1px black;
+    	top: 76px;
+    	bottom: 0;
+    	
+	}
+	
+	.left-menu .admin_todolist {
+	  padding-top: 40px;
+  	 /*  background: #ccc; */
+   	  height: 270px;
+	}
+	
+	.admin_todolist2 {
+		padding-left: 10px;
+		padding-top: 50px;
+   	    text-align: left;
+	}
+	
+	.admin_todolist2 > div {
+		margin: 15px;
+	}
+	
+	.admin_todolist2 > a:hover {
+		text-decoration: underline;
+	}
+	
+	.todolist,
+	.todolist_are {
+		margin: 20px;
+	}
+	
+	.todolist_area div {
+		font-size:15px;
+		margin: 20px;
+	}
+	
+	.todolist_area > input {
+		float: left;
+	}
+	
+	.main {
+		margin-left: 200px;
+}
+	
+/* 	.main .content{
+    float: left;
+    width: 87%;
+    height: 677px;
+	}
+	.main .content .article{
+		height: 100%;
+		background-color: #e2e9ff;
+	} */
+
+	.comment {
+		width: 100%;
+		height: 100px;
+		background-color: #ffddff;
+	}
+	
+	
+	
+/* 	.main .content .comment{
+		height: 50px;
+		background-color: #ffddff;
+	}
+ */

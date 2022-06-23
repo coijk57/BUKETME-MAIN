@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.likeMedia">
+<!-- property는 memberVO에서 사용하는 변수, column은 db에서 사용하는 변수 -->
+		<resultMap type="likeMediaVO" id="likeMediaResult">
+		<result property="profileRegisterNum" column="PROFILEREGISTERNUM" />
+		<result property="categoryNo" column="CATEGORYNO" />
+		<result property="likeCategoryNo" column="LIKECATEGORYNO" />
+		<result property="personalBadContents" column="PERSONALBADCONTENTS" />
+	</resultMap>
+	
+	<select id="selectLikeList" resultMap="likeMediaResult" parameterType="int">
+		<![CDATA[
+			SELECT PROFILEREGISTERNUM as profileRegisterNum,
+			CATEGORYNO as categoryNo,
+			LIKECATEGORYNO as likeCategoryNo,
+			PERSONALBADCONTENTS  as personalBadContents FROM LIKEMEDIA WHERE PROFILEREGISTERNUM = #{profileRegisterNum}
+		]]>
+	</select>
+		
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

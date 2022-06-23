@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+body{
+	margin:0;
+	background-color: rgb(26, 29, 41);
+	color:white;
+}
+
+/* header */
+#header{
+	background-color: rgb(26, 29, 41);
+	width: 100%;
+}
+
+.Bucketme-Logo-Menu{
+	width: 100%	;
+	height: 80px;
+	background-color: rgb(26, 29, 41);
+}
+
+.Bucketme-Logo{
+	width:130px;
+	float:left;
+	margin: 5px;
+}
+
+.Logo{
+	width:130px;
+}
+
+.Bucketme-Login{
+	width: 110px;
+	height: 40px;
+	background-color: #f1592a;
+	float: right;
+	margin:20px;
+	text-decoration-line: none;
+	display: table;
+}
+
+.Login{
+	color: white;
+	font-size: 15pt;
+	font-weight: bold;
+	display: table-cell;
+	text-align: center;
+	padding-top:5px;
+}
+
+/* section*/
+section{
+	margin:0;
+	width: 100%;	
+}
+
+/* MainSection, MainSection-First */
+.MainSection-First-Img{
+	width: 100%;
+}
+
+.MainImg{
+	width: 100%;
+	opacity: 40%;
+}
+
+
+.MainSection-First-content{
+	width:690px;
+	text-align:center;
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	margin-top:120px;
+}
+
+.MainSection-First-Letters{
+	float: left;
+}
+
+
+.MainSection-First-Letters > h1{
+	font-size: 90px;
+}
+
+.MainSection-First-Letters > p{
+	font-size: 17px;
+}
+
+.MainSection-First-input{
+	display: inline-block;	
+}
+
+
+.user-Email{
+	width: 450px;
+	height: 53px;
+	float: left;
+}
+
+.staer-Butten{
+	min-width: 200px;
+	min-height: 60px;
+	border: 0;
+	outline: 0;
+	z-index: 1;
+	background-color: #f1592a;
+	font-weight:bold;
+	color:white;
+	font-size: 25px;
+	float: left;
+}
+
+/* MainSection-Explain */
+.MainSection-Explain{
+	max-width: 1300px;
+	margin: auto;
+}
+
+
+
+/* MainSection-Second */
+.MainSection-Second{
+	margin-top:150px;
+}
+
+.MainSection-Second-content{
+		display: flex;
+}
+
+.MainSection-Second-Letters{
+	max-width: 50%;
+}
+
+.MainSection-Second-Letters > h1{
+	font-size: 60px;
+}
+
+.MainSection-Second-Letters > p{
+	font-size: 33px;
+}
+
+.MainSection-Second-Img{
+	max-width: 50%;
+}
+
+.MainSecondImg{
+	width: 100%;	
+}
+
+/* MainSection-Third */
+.MainSection-Third{
+	margin-top:150px;
+}
+
+.MainSection-Third-content{
+		display: flex;
+}
+
+.MainSection-Third-Letters{
+	max-width: 50%;
+}
+
+.MainSection-Third-Letters > h1{
+	font-size: 60px;
+}
+
+.MainSection-Third-Letters > p{
+	font-size: 33px;
+}
+
+.MainSection-Third-Img{
+	max-width: 50%;
+}
+
+.MainThirdImg{
+	width: 100%;	
+}
+
+/* MainSection-Fourth */
+.MainSection-Fourth{
+	margin-top:150px;
+}
+
+.MainSection-Fourth-content{
+		display: flex;
+}
+
+.MainSection-Fourth-Letters{
+	max-width: 50%;
+}
+
+.MainSection-Fourth-Letters > h1{
+	font-size: 60px;
+}
+
+.MainSection-Fourth-Letters > p{
+	font-size: 33px;
+}
+
+.MainSection-Fourth-Img{
+	max-width: 50%;
+}
+
+.MainFourthImg{
+	width: 100%;	
+}
+
+
+/* 자주하는 질문 */
+.Often-Question{
+	margin-top:100px;
+	width:100%;	
+}
+
+.Often-Question-content{
+	max-width: 1200px;
+	left: 50%;
+	margin: auto;
+}
+
+.Often-Question-title > h1{
+	font-size: 80px;
+	text-align: center;
+}
+
+.Question > ul{
+	list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#show1,#show2,#show3,#show4,#show5,#show6{
+border: none;
+padding:0.8em 2.2em 0.8em 1.2em;
+margin-bottom: 10px;
+font-size: 35px;
+color:white;
+text-align: left;
+width: 100%;
+background-color: #f1592a;
+}
+
+#dis1,#dis2,#dis3,#dis4,#dis5,#dis6{
+display: none;
+padding: 1.2em;
+background-color: #f1592a;
+font-size: 30px;
+margin-top: -40px;
+margin-bottom: 10px;
+}

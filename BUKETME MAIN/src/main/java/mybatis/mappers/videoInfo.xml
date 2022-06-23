@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.videoInfo">
+		<resultMap type="videoInfoVO" id="videoResult">
+			<result property="videoNum" column="VIDEONUM" />
+			<result property="title" column="TITLE" />
+			<result property="contents" column="CONTENTS" />
+			<result property="categoryNo" column="CATEGORYNO" />
+			<result property="likeCategoryNo" column="LIKECATEGORYNO" />
+			<result property="imageFileName" column="IMAGEFILENAME" />
+			<result property="videoFileName" column="VIDEOFILENAME" />
+			<result property="ageLimit" column="AGELIMIT" />
+			<result property="openDate" column="OPENDATE" />
+			<result property="postDate" column="POSTDATE" />
+			<result property="videoHits" column="VIDEOHITS" />
+			<result property="actors" column="ACTORS" />
+			<result property="director" column="DIRECTOR" />
+	</resultMap>
+
+	<select id="selectRecentVideo" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE VIDEONUM = (SELECT MAX(VIDEONUM) FROM VIDEOINFO)
+		]]>
+	</select>
+	
+	<select id="selectSeriesTop10List" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE rownum <= 10 AND CATEGORYNO LIKE '2%' ORDER BY VIDEOHITS DESC
+		]]>
+	</select>
+	
+	<select id="selectMovieTop10List" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE rownum <= 10 AND CATEGORYNO LIKE '1%' ORDER BY VIDEOHITS DESC
+		]]>
+	</select>
+	
+	<select id="newContentsList" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO ORDER BY VIDEONUM DESC
+		]]>
+	</select>
+	
+	<select id="likeVideoList" parameterType="java.util.HashMap" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE LIKECATEGORYNO LIKE '%'||#{like1}||'%'
+				OR LIKECATEGORYNO LIKE '%'||#{like2}||'%' OR LIKECATEGORYNO LIKE '%'||#{like3}||'%'
+		]]>
+	</select>
+	
+	<select id="watchingVideoList" parameterType="int" resultMap="videoResult">
+		<![CDATA[
+			SELECT v1.VIDEONUM as videoNum,
+				v1.TITLE as title,
+				v1.CONTENTS as contents,
+				v1.CATEGORYNO as categoryNo,
+				v1.LIKECATEGORYNO as likeCategoryNo,
+				v1.IMAGEFILENAME as imageFileName,
+				v1.VIDEOFILENAME as videoFileName,
+				v1.AGELIMIT as ageLimit,
+				v1.OPENDATE as openDate,
+				v1.POSTDATE as postDate,
+				v1.VIDEOHITS as videoHits,
+				v1.ACTORS as actors,
+				v1.DIRECTOR as director FROM VIDEOINFO v1 , VIDEORECORD v2 
+				WHERE v1.VIDEONUM = v2.VIDEONUM AND v2.PROFILEREGISTERNUM = #{profileRegisterNum} 
+				AND v2.STATUS = '시청 중'
+		]]>
+	</select>
+	
+	<select id="recentMovieList" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE VIDEONUM = (SELECT MAX(VIDEONUM) FROM VIDEOINFO WHERE CATEGORYNO LIKE '1%')
+		]]>
+	</select>
+	
+	<select id="movieWatchingVideoList" parameterType="int" resultMap="videoResult">
+		<![CDATA[
+			SELECT v1.VIDEONUM as videoNum,
+				v1.TITLE as title,
+				v1.CONTENTS as contents,
+				v1.CATEGORYNO as categoryNo,
+				v1.LIKECATEGORYNO as likeCategoryNo,
+				v1.IMAGEFILENAME as imageFileName,
+				v1.VIDEOFILENAME as videoFileName,
+				v1.AGELIMIT as ageLimit,
+				v1.OPENDATE as openDate,
+				v1.POSTDATE as postDate,
+				v1.VIDEOHITS as videoHits,
+				v1.ACTORS as actors,
+				v1.DIRECTOR as director FROM VIDEOINFO v1 , VIDEORECORD v2 WHERE v1.VIDEONUM = v2.VIDEONUM AND CATEGORYNO LIKE '1%'
+				AND v2.PROFILEREGISTERNUM = #{profileRegisterNum} AND v2.STATUS = '시청 중'
+		]]>
+	</select>
+	
+	<select id="finWatchingVideoList" parameterType="int" resultMap="videoResult">
+		<![CDATA[
+			SELECT v1.VIDEONUM as videoNum,
+				v1.TITLE as title,
+				v1.CONTENTS as contents,
+				v1.CATEGORYNO as categoryNo,
+				v1.LIKECATEGORYNO as likeCategoryNo,
+				v1.IMAGEFILENAME as imageFileName,
+				v1.VIDEOFILENAME as videoFileName,
+				v1.AGELIMIT as ageLimit,
+				v1.OPENDATE as openDate,
+				v1.POSTDATE as postDate,
+				v1.VIDEOHITS as videoHits,
+				v1.ACTORS as actors,
+				v1.DIRECTOR as director FROM VIDEOINFO v1 , VIDEORECORD v2 
+				WHERE v1.VIDEONUM = v2.VIDEONUM AND v2.PROFILEREGISTERNUM = #{profileRegisterNum} 
+				AND v2.STATUS = '시청 완료'
+		]]>
+	</select>
+	
+	<select id="modalVideo" parameterType="String" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE IMAGEFILENAME = #{imageFile}
+		]]>
+	</select>
+	
+	<select id="movieCategoryList" parameterType="int" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE CATEGORYNO LIKE '1%' AND 
+				CATEGORYNO LIKE '%'||#{no}||'%'
+		]]>
+	</select>
+	
+	<select id="openDateList" parameterType="java.util.HashMap" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE TO_CHAR(OPENDATE, 'YYYYMMDD') >= #{currentStartDate} AND 
+				TO_CHAR(OPENDATE, 'YYYYMMDD') <= #{currentEndDate}
+		]]>
+	</select>
+	
+	<select id="searchList" parameterType="String" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE TITLE LIKE '%'||#{video}||'%'
+		]]>
+	</select>
+	
+	
+	<select id="selectMovieList3" parameterType="int" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE CATEGORYNO LIKE '1%' AND CATEGORYNO LIKE '%'||#{no}||'%'
+		]]>
+	</select>
+	
+	<!-- <select id="selectMovieList1" parameterType="int">
+		<![CDATA[
+			SELECT v.VIDEONUM FROM VIDEOINFO v, USERRATING u WHERE v.VIDEONUM = u.VIDEONUM
+				AND v.CATEGORYNO LIKE '1%' AND v.CATEGORYNO LIKE '%'||#{no}||'%'
+				GROUP BY v.VIDEONUM ORDER BY SUM(u.LIKES) DESC
+		]]>
+	</select>
+	
+	<select id="selectMovieList2" parameterType="int">
+		<![CDATA[
+			SELECT v.VIDEONUM FROM VIDEOINFO v, USERRATING u WHERE v.VIDEONUM = u.VIDEONUM
+				AND v.CATEGORYNO LIKE '1%' AND v.CATEGORYNO LIKE '%'||#{no}||'%'
+				GROUP BY v.VIDEONUM ORDER BY AVG(RATING) DESC
+		]]>
+	</select> -->
+	
+	<select id="recentSeriesList" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE VIDEONUM = (SELECT MAX(VIDEONUM) FROM VIDEOINFO WHERE CATEGORYNO LIKE '2%')
+		]]>
+	</select>
+	
+	<select id="seriesWatchingVideoList" parameterType="int" resultMap="videoResult">
+		<![CDATA[
+			SELECT v1.VIDEONUM as videoNum,
+				v1.TITLE as title,
+				v1.CONTENTS as contents,
+				v1.CATEGORYNO as categoryNo,
+				v1.LIKECATEGORYNO as likeCategoryNo,
+				v1.IMAGEFILENAME as imageFileName,
+				v1.VIDEOFILENAME as videoFileName,
+				v1.AGELIMIT as ageLimit,
+				v1.OPENDATE as openDate,
+				v1.POSTDATE as postDate,
+				v1.VIDEOHITS as videoHits,
+				v1.ACTORS as actors,
+				v1.DIRECTOR as director FROM VIDEOINFO v1 , VIDEORECORD v2 WHERE v1.VIDEONUM = v2.VIDEONUM AND CATEGORYNO LIKE '2%'
+				AND v2.PROFILEREGISTERNUM = #{profileRegisterNum} AND v2.STATUS = '시청 중'
+		]]>
+	</select>
+	
+	<select id="seriesCategoryList" parameterType="int" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE CATEGORYNO LIKE '2%' AND 
+				CATEGORYNO LIKE '%'||#{no}||'%'
+		]]>
+	</select>
+	
+	<select id="selectSeriesList" parameterType="int" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE CATEGORYNO LIKE '2%' AND CATEGORYNO LIKE '%'||#{no}||'%'
+		]]>
+	</select>
+	
+	<select id="selectByVideoNum"  resultType="map">
+		<![CDATA[
+			SELECT VIDEONUM,CATEGORYNO,LIKECATEGORYNO,VIDEOFILENAME,IMAGEFILENAME,
+					AGELIMIT,VIDEOHITS,DIRECTOR,TITLE,ACTORS,CONTENTS,
+					TO_CHAR(OPENDATE, '""YYYY"년 "MM"월 "DD"일"')as OPENDATE,
+					TO_CHAR(POSTDATE, '""YYYY"년 "MM"월 "DD"일"')as POSTDATE
+					FROM VIDEOINFO WHERE VIDEONUM = #{select}
+		]]>
+	</select>
+	
+	<select id="recommendList" parameterType="java.util.HashMap" resultMap="videoResult">
+		<![CDATA[
+			SELECT *
+				 FROM (SELECT * FROM VIDEOINFO v WHERE CATEGORYNO LIKE '%'||#{category1}||'%' OR CATEGORYNO LIKE '%'||#{category2}||'%') WHERE rownum <= 5
+		]]>
+	</select>
+	
+	<!-- <select id="recommendList" parameterType="java.util.HashMap" resultMap="videoResult">
+		<![CDATA[
+			SELECT *
+				 FROM (SELECT TITLE, CATEGORYNO FROM VIDEOINFO v WHERE CATEGORYNO LIKE '%10%' OR CATEGORYNO LIKE '%14%') WHERE rownum <= 5
+		]]>
+	</select> -->
+	
+	
+	<select id="selectAllVideo" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO ORDER BY POSTDATE DESC
+		]]>
+	</select>
+	
+	<select id="playVideo" resultMap="videoResult">
+		<![CDATA[
+			SELECT VIDEONUM as videoNum,
+				TITLE as title,
+				CONTENTS as contents,
+				CATEGORYNO as categoryNo,
+				LIKECATEGORYNO as likeCategoryNo,
+				IMAGEFILENAME as imageFileName,
+				VIDEOFILENAME as videoFileName,
+				AGELIMIT as ageLimit,
+				OPENDATE as openDate,
+				POSTDATE as postDate,
+				VIDEOHITS as videoHits,
+				ACTORS as actors,
+				DIRECTOR as director FROM VIDEOINFO WHERE VIDEONUM = #{videoNum}
+		]]>
+	</select>
+	
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

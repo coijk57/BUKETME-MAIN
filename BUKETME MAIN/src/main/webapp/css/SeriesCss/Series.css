@@ -1,0 +1,300 @@
+@charset "UTF-8";
+
+body {
+    background-color: rgb(26, 29, 41);
+    color: #fff;
+}
+
+
+
+/*헤더 부분 */
+#header{
+background-color: rgb(26, 29, 41);
+}
+
+.Bucketme-Logo-Menu{
+width: 100%	;
+height: 70px;
+background-color: rgb(26, 29, 41);
+}
+
+.Bucketme-Logo{
+	width:130px;
+		float:left;
+}
+.Logo{
+width:130px;
+}
+
+.Bucketme-Menu{
+	height: 70px;
+	float:left;
+}
+.Bucketme-Menu>a{
+	margin-left:50px;
+	font-size:15pt;
+	text-decoration:none;
+	color:white;
+}
+
+
+
+/* 세션 부분 */
+section{
+	width: 100%;
+}
+
+.main_wrapper {
+width: 100%;
+    overflow: hidden;
+}
+
+.Series{
+text-align:center;
+font-size:27px;
+}
+
+.trailers {
+width: 100%;
+}
+
+.SeriesNavArea{
+position: absolute; z-index: 1;
+}
+
+.SeriesNav{
+position: relative;
+top: -87px;
+left: 250px;
+}
+
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    padding: 6px;
+    border: none;
+    cursor: pointer;
+    border: solid 1px white;
+    margin-right: 50px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    background-color: rgba( 0, 0, 0, 0.5 );
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 500px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    color:white;
+    font-size: 15px;
+    width: 140px;
+}
+.dropdown-content div {
+ float: left;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {text-decoration: underline;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+/* Dropdown Button */
+.dropbtn2 {
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    padding: 7px;
+    border: none;
+    cursor: pointer;
+    border: solid 1px white;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn2:hover, .dropbtn2:focus {
+    background-color: rgba( 0, 0, 0, 0.5 );
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown2 {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content2 a {
+    color: black;
+    padding: 5px 10px;
+    text-decoration: none;
+    display: block;
+    color:white;
+    font-size: 15px;
+    width: 120px;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content2 a:hover {text-decoration: underline;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show2 {display:block;}
+
+
+.movie_explain_wrapper > div {
+    margin: 20px;
+    color: white;
+    font-size: 25px;
+}
+
+.movie_explain_wrapper .title {	
+	font-size: 70px;
+    color: white;	
+}
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    };
+    100% {
+        width: 120px;
+        height: 120px;
+        opacity: 0;
+    };
+}
+
+.w-btn-neon2 {
+    position: relative;
+    border: none;
+    min-width: 120px;
+    min-height: 50px;
+    background: linear-gradient(
+        90deg,
+        rgba(129, 230, 217, 1) 0%,
+        rgba(79, 209, 197, 1) 100%
+    );
+    border-radius: 1000px;
+    color: darkslategray;
+    cursor: pointer;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.w-btn-neon2:hover {
+    transform: scale(1.2);
+}
+
+.w-btn-neon2:hover::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00ffcb;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+
+
+.movie_explain_wrapper {
+    position: absolute;
+    float: right;
+    width: 500px;
+    height: 400px;
+    top: 20%;
+    left: 65%;
+}
+
+.usermovie_list .movie_list_title {
+	padding: 3px;
+}
+
+.usermovie_list .movie_contents_list {
+	padding: 3px;
+}
+
+.movie_list_title > .title1, .title1:link, .title1:visited, .title1:hover {
+	text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+.movie_list_title > .more, .more:link, .more:visited, .more:hover {
+	text-decoration: none;
+    color: white;
+}
+
+ .movie_list_title:hover .more {
+	opacity: 1;
+}
+ 
+ .more {
+    font-size: 18px;
+    color: #fff;
+    width: 120px;
+    margin-left: 20px;
+    opacity: 0;
+    transition: 0.5s all;
+}
+ 
+.movie_list_title div{
+	display: inline-block;
+}
+ 
+.imgsize {
+	width: 100%;
+	max-width : 290px;
+	}
+	
+.imgsize:hover{
+	transform: scale(1.5);
+	transition: .5s;
+}
+
+
+.usermovie_list{
+	margin-top: 30px;
+}
+
+.empty-comment1 {
+	text-align: center;
+    margin: 50px 0;
+}

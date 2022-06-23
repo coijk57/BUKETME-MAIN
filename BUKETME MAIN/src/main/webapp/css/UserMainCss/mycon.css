@@ -1,0 +1,132 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.main_wrapper {
+	background: rgb(26, 29, 41);
+}
+
+.main_wrapper {
+/* 	border: solid 2px black;		//동영상 삽입 전 CSS
+	padding: 10px;
+	height: 400px; */
+    width: 100%;
+/*  padding: 10px; */
+/*  height: 640px; */
+    overflow: hidden;
+    margin: 0px auto;
+    position: relative;
+}
+
+.trailers {
+	width: 100%;
+}
+
+.movie_list_wrapper {
+    margin: 80px 0;
+}
+
+.comingsoon_list .put_list .finish_list {
+/*  border: solid 2px black; */
+	margin: 3px;
+	padding-top: 60px;
+}
+
+.comingsoon_list .put_list .finish_list .movie_list_title {
+/*  border: solid 1px black; */
+	padding: 3px;
+}
+
+.movie_list_title > a, .movie_list_title > a:link,
+ .movie_list_title > a:visited, .movie_list_title > a:hover {
+	text-decoration: none;
+    color: white;
+    font-size: 25px;
+    margin-left: 15px;
+}
+
+.comingsoon_list .put_list .finish_list .movie_contents_list {
+/*  border: solid 1px black; */
+	padding: 3px;
+}
+
+/*
+.movie_contents_list > img {
+	width: 120px;
+	height: 80px;
+}
+*/
+.imgsize {
+	width: 100%;
+	max-width: 290px;
+	height: 140px;
+}
+
+.imgsize:hover {
+	transform: scale(1.5);
+	transition: 0.5s;
+}
+
+.movie_contents_list {
+	margin-top:15px;
+	margin-bottom: 15px;
+}
+
+.movie_contents_list > a {
+	text-decoration: none;
+}
+
+.movie_list_title:hover .more {
+	opacity: 1;
+}
+
+.more {
+    /* display: block; */
+    font-size: 18px !important;
+    color: #fff;
+    /* background: red; */
+    /* line-height: 40px; */
+    width: 120px;
+    margin-left: 20px;
+    /* margin-top: 30px; */
+    opacity: 0;
+    transition: 0.5s all;
+}
+
+.more:link, .more:visited, .more:hover {
+	margin-left: 0px;
+}
+
+.main_wrapper h1 {
+	color: white;
+	margin-left: 50px;
+	margin-top: 25px;
+	margin-bottom: 85px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

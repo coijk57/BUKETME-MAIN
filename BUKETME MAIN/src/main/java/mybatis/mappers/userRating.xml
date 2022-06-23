@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.userRating">
+<!-- property는 SeriesVO에서 사용하는 변수, column은 db에서 사용하는 변수 -->
+		<resultMap type="userRatingVO" id="userRatingResult">
+			<result property="profileregisternum" column="PROFILEREGISTERNUM" />
+			<result property="videonum" column="VIDEONUM" />
+			<result property="likes" column="LIKES" />
+			<result property="bad" column="BAD" />
+			<result property="rating" column="RATING" />
+		</resultMap>
+
+
+ 		
+<!--  		<update id="updateContentDetailLike"> -->
+<!-- 			<![CDATA[ -->
+<!-- 			UPDATE USERRATING SET LIKES = CASE WHEN LIKES=1 THEN 0 ELSE 1 END WHERE  -->
+<!-- 					( PROFILEREGISTERNUM = #{PROFILEREGISTERNUM} AND VIDEONUM = #{VIDEONUM}) -->
+<!-- 			]]> -->
+<!-- 		</update> -->
+		
+		<update id="mergeContentDetailLike">
+		MERGE INTO USERRATING A 
+			 USING(
+			     SELECT #{PROFILEREGISTERNUM} AS PROFILEREGISTERNUM
+			          , #{VIDEONUM} AS VIDEONUM
+			          , #{LIKES} AS LIKES
+<!-- 			      , #{BAD} AS BAD -->
+<!-- 			      , #{RATING} AS RATING -->
+			       FROM DUAL
+			 ) B ON (
+			        A.PROFILEREGISTERNUM = B.PROFILEREGISTERNUM
+			    AND A.VIDEONUM = B.VIDEONUM
+			 )
+			 WHEN MATCHED THEN 
+			   UPDATE 
+			     SET A.LIKES = CASE WHEN A.LIKES=1 THEN 0 ELSE 1 END
+			 WHEN NOT MATCHED THEN 
+			   INSERT(
+				     A.PROFILEREGISTERNUM 
+				    ,A.VIDEONUM 
+				    ,A.LIKES 
+<!-- 				,A.BAD  -->
+<!-- 				,A.RATING  -->
+			   ) VALUES (
+				     B.PROFILEREGISTERNUM 
+				    ,B.VIDEONUM
+				    ,B.LIKES 
+<!-- 				,B.BAD  -->
+<!-- 				,B.RATING -->
+			   )
+		</update>
+		
+		<update id="mergeContentDetailBAD">
+		MERGE INTO USERRATING A 
+			 USING(
+			     SELECT #{PROFILEREGISTERNUM} AS PROFILEREGISTERNUM
+			          , #{VIDEONUM} AS VIDEONUM
+<!-- 			      , #{LIKES} AS LIKES -->
+ 			          , #{BAD} AS BAD 
+<!-- 			      , #{RATING} AS RATING -->
+			       FROM DUAL
+			 ) B ON (
+			        A.PROFILEREGISTERNUM = B.PROFILEREGISTERNUM
+			    AND A.VIDEONUM = B.VIDEONUM
+			 )
+			 WHEN MATCHED THEN 
+			   UPDATE 
+			     SET A.BAD = CASE WHEN A.BAD = 1 THEN 0 ELSE 1 END
+			 WHEN NOT MATCHED THEN 
+			   INSERT(
+				     A.PROFILEREGISTERNUM 
+				    ,A.VIDEONUM 
+<!-- 			    ,A.LIKES  -->
+ 				    ,A.BAD
+<!-- 				,A.RATING  -->
+			   ) VALUES (
+				     B.PROFILEREGISTERNUM 
+				    ,B.VIDEONUM
+<!-- 				,B.LIKES  -->
+ 				    ,B.BAD 
+<!-- 				,B.RATING -->
+			   )
+		</update>
+		
+		
+		<select id="selectStar" resultType="map">
+			<![CDATA[
+			SELECT PROFILEREGISTERNUM,VIDEONUM 
+					FROM USERRATING WHERE 
+					(PROFILEREGISTERNUM = #{PROFILEREGISTERNUM} AND VIDEONUM = #{VIDEONUM})
+			]]>
+		</select>
+		
+		
+		
+		<update id="updateStar">
+			UPDATE USERRATING SET RATING = #{RATING} WHERE (PROFILEREGISTERNUM = #{PROFILEREGISTERNUM} AND VIDEONUM = #{VIDEONUM})
+		</update>
+		
+		
+		
+		<update id="mergeContentDetailRATING">
+		MERGE INTO USERRATING A 
+			 USING(
+			     SELECT #{PROFILEREGISTERNUM} AS PROFILEREGISTERNUM
+			          , #{VIDEONUM} AS VIDEONUM
+<!-- 			      , #{LIKES} AS LIKES -->
+<!--  			      , #{BAD} AS BAD  -->
+    			      , #{RATING} AS RATING 
+			       FROM DUAL
+			 ) B ON (
+			        A.PROFILEREGISTERNUM = B.PROFILEREGISTERNUM
+			    AND A.VIDEONUM = B.VIDEONUM
+			 )
+			 WHEN MATCHED THEN 
+			   UPDATE 
+			     SET A.RATING = CASE WHEN A.RATING = 1 THEN 0 ELSE 1 END
+			 WHEN NOT MATCHED THEN 
+			   INSERT(
+				     A.PROFILEREGISTERNUM 
+				    ,A.VIDEONUM 
+<!-- 			    ,A.LIKES  -->
+<!-- 				,A.BAD -->
+    				,A.RATING  
+			   ) VALUES (
+				     B.PROFILEREGISTERNUM 
+				    ,B.VIDEONUM
+<!-- 				,B.LIKES  -->
+<!--  			    ,B.BAD  -->
+	 				,B.RATING 
+			   )
+		</update>
+		
+		
+</mapper>
+

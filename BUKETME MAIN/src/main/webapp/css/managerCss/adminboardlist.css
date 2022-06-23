@@ -1,0 +1,311 @@
+@charset "UTF-8";
+
+/* 
+   - 배경색 : #041c32
+   - 로고색 : #EDAE47
+   - 버튼색 : #ff6768
+
+ */
+
+a {
+	text-decoration: none;		/* 밑줄 제거 */
+	color: inherit;				/* 색상 제거 */
+}
+
+.board_list_wrap {
+	width: 70%;
+	margin: 30px 0 0 0;
+	padding: 0;
+}
+
+
+.board_search {
+	height: 30px;
+	margin: 30px;
+}
+/*
+.board_search .filter {
+	float: left;
+    width: 5%;
+    text-align: center;
+}
+*/
+.board_search .list_title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+.board_list_head,				/* board_list_head > div, board_list_body .item > div 의 부모 영역 css */
+.board_list_body .item {
+	font-size: 0;
+	padding: 10px 0;
+	display: flex;
+}
+
+.board_list_head {
+	padding: 15px 0;
+	border-top: solid 3px #041c32;
+	border-bottom: solid 1px #ccc;
+}
+
+.board_list_body .item {
+	border-bottom: solid 1px #ccc;
+	height: 40px;
+	justify-content: center;
+    align-items: center;
+}
+
+.board_list_head > div,			/* board_list_head 안에 있는 div */
+.board_list_body .item > div {		
+	display: inline-block;		/* 나란히 정렬 */		
+	font-size: 14px;
+	text-align: center;			/* 가운데 정렬 */
+}
+
+.board_list_head > div {
+	font-weight: 600;
+}
+
+.board_list .checkbox {
+	width: 10%;
+}
+
+.board_list .contents {
+	width: 50%;
+}
+
+.board_list_contentsimg {
+	width: 89px;
+	height: 50px;
+    padding: 0 50px;
+    position: relative;
+    top: 20px;
+}
+
+.board_list_body div.contents {
+	text-align: left;
+	position: relative;
+    top: -18px;
+}
+
+.board_list_body .contents a:hover {	/* a태그위에 마우스 hover했을 때 밑줄 */
+	text-decoration: underline;
+}
+
+.board_list .public {
+	width: 15%;
+}
+
+.board_list .date {
+	width: 15%;
+}
+
+.board_list .view {
+	width: 10%;
+}
+
+/* paging */
+.paging {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.paging a {
+	display: inline-block;
+	vertical-align: middle;
+	
+}
+
+.paging a.bt {
+	width: 30px;
+	height: 30px;
+	background: #ff6768;
+	background-image: url(../../img/page_btn.png);
+	background-repeat: no-repeat;
+	border-radius: 100px;
+	text-indent: -1000px;		/* 필요없는 글자 밀어버리기~ */
+	overflow: hidden;			/* 영역 밖으로 넘어간애들 화면에 나오지 않게 하기 */
+}
+
+.paging a.bt:hover {
+	background-color: #ffa1a1;
+}
+
+/* 버튼, 숫자 사이 간격 조절 */
+.paging a.first {
+	background-position: 10px -40px;
+}
+
+.paging a.prev {
+	margin-right: 5px;
+	background-position: 10px 10px;
+}
+
+.paging a.next {
+	margin-left: 5px;
+	background-position: -40px 10px;
+}
+
+.paging a.last {
+	background-position: -40px -40px;
+}
+
+.paging a.num {
+	margin: 0 5px;
+}
+
+.paging a.num.on {
+	color: green;
+	
+}
+.paging a.num:hover {
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+.input-group {
+	display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 500px;
+    margin: 50px auto;
+}
+
+.input-group-prepend {
+	display: flex;
+	margin-right: -1px;
+}
+
+::after, ::before {
+    box-sizing: border-box;
+}
+
+.intput-group>.intput-group-prepend>.btn {
+	position: relative;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-outline-secondary {
+    color: #6c757d;
+    background-color: transparent;
+    background-image: none;
+    
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    border-color: #6c757d;
+    border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled).active, .btn-outline-secondary:not(:disabled):not(.disabled):active, .show>.btn-outline-secondary.dropdown-toggle {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.dropdown-toggle::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+.dropdown-menu {
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu[x-placement^=bottom] {
+    right: auto;
+    bottom: auto;
+}
+
+.dropdown-item {
+	cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: .25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #212529;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+}
+
+.input-group>.form-control:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-group>.form-control {
+    position: relative;
+    flex: 1 1 auto;
+    width: 1%;
+    margin-bottom: 0;
+}
+
+.form-control {
+    display: block;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}

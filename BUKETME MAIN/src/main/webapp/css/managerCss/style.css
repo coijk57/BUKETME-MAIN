@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,600&display=swap");
+
+/*component*/
+@import "components/title-bar.css";
+@import "components/adminSideBox.css";
+@import "components/adminMainBox.css";
+@import "components/userSubProfileBox.css";
+
+/*screen*/
+@import "screen/adminDashBoard.css";
+@import "screen/contentsUpLoad.css";
+
+
+body{
+    margin: 0px;
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.videoRecord">
+	<resultMap type="videoRecordVO" id="videoRecordResult">
+		<result property="recordNum" column="RECORDNUM" />
+		<result property="profileRegisterNum" column="PROFILEREGISTERNUM" />
+		<result property="videoNum" column="VIDEONUM" />
+		<result property="videoSection" column="VIDEOSECTION" />
+		<result property="status" column="STATUS" />
+	</resultMap>
+	
+	<select id="selectMaxRecordNum" resultType="int">
+		<![CDATA[
+			SELECT max(RECORDNUM) FROM VIDEORECORD
+		]]>
+	</select>
+	
+	<select id="recordCheck" parameterType="java.util.HashMap" resultMap="videoRecordResult">
+		<![CDATA[
+			select * from videorecord where profileregisternum = #{profileNum} and videonum = #{videoNum}
+		]]>
+	</select>
+	
+	<insert id="insertRecord" parameterType="java.util.HashMap">
+		<![CDATA[
+			insert into videorecord
+			values (#{recordNum} + 1, #{profileNum}, #{videoNum}, #{playTime}, '시청 중')
+		]]>
+	</insert>
+	
+	<update id="updateRecord" parameterType="java.util.HashMap">
+		<![CDATA[
+			update videorecord set videosection = #{playTime} where profileregisternum = #{profileNum} and videonum = #{videoNum}
+		]]>
+	</update>
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

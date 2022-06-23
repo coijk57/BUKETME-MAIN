@@ -1,0 +1,182 @@
+@charset "UTF-8";
+
+body {
+	overflow-x: hidden;
+	background-color: rgb(26, 29, 41);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.main_wrapper {
+
+	background: rgb(26, 29, 41);
+    
+}
+
+.main_wrapper .movie_ad {
+
+    width: 100%;
+
+    overflow: hidden;
+    margin: 0px auto;
+    position: relative;
+}
+
+.trailers {
+	width: 100%;
+}
+
+.movie_ad .movie_explain_wrapper {
+
+    position: absolute;
+    float: right;
+    width: 500px;
+    height: 400px;
+    top: 20%;
+    left: 65%;
+}
+
+.movie_explain_wrapper > div { 	/* 영역 확인  */
+    margin: 20px;
+    color: white;
+    font-size: 25px;
+}
+
+.movie_explain_wrapper .title {	
+	font-size: 70px;
+    color: white;	
+}
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    };
+    100% {
+        width: 120px;
+        height: 120px;
+        opacity: 0;
+    };
+}
+
+.w-btn-neon2 {
+    position: relative;
+    border: none;
+    min-width: 120px;
+    min-height: 50px;
+    background: linear-gradient(
+        90deg,
+        rgba(129, 230, 217, 1) 0%,
+        rgba(79, 209, 197, 1) 100%
+    );
+    border-radius: 1000px;
+    color: darkslategray;
+    cursor: pointer;
+    box-shadow: 12px 12px 24px rgba(79, 209, 197, 0.64);
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.w-btn-neon2:hover {
+    transform: scale(1.2);
+}
+
+.w-btn-neon2:hover::after {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid #00ffcb;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+.movie_list_wrapper {
+	/* border: solid 3px black; */
+}
+
+.usermovie_list {
+	margin: 3px;
+	padding-bottom: 60px;
+}
+
+.usermovie_list .movie_list_title {
+	padding: 3px;
+}
+
+.movie_list_title > a, .movie_list_title > a:link, 
+.movie_list_title > a:visited, .movie_list_title > a:hover {
+	text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+
+.usermovie_list .movie_contents_list {
+	padding: 3px;
+}
+
+.loading_bar {
+	color: white;
+}
+
+.numbering {
+    position: relative;
+    left: 25px;
+}
+
+.imgsize {
+	width: 120px;
+	height: 170px;
+}
+
+.imgsize2 {
+	width: 220px;
+	height: 120px;
+}
+
+.zoomin {
+	width: 200px;
+	height: 200px;
+	margin: 0px auto;
+}
+
+.zoomin img {
+	transform: scale(1);
+	transition: all 0.2s linear;
+	
+}
+
+.zoomin:hover img {
+	transform: scale(1.4);
+	z-index: 30;
+}
+
+.movie_contents_list > a {
+	text-decoration: none;
+}
+
+.movie_list_title:hover .more {
+	opacity: 1;
+}
+
+.more {
+
+    font-size: 18px !important;
+    color: #fff;
+    width: 120px;
+    margin-left: 20px;
+    opacity: 0;
+    transition: 0.5s all;
+}
+
+.movie_contents_list2, .movie_contents_list2 > div {
+	display: flex;
+}

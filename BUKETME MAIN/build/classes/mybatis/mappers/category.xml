@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.category">
+	<resultMap type="categoryVO" id="categoryResult">
+		<result property="categoryNo" column="CATEGORYNO" />
+		<result property="categoryName" column="CATEGORYNAME" />
+	</resultMap>
+
+	<select id="selectCategoryName" resultType="String">
+		SELECT CATEGORYNAME FROM CATEGORY 
+		 WHERE CATEGORYNO IN
+		 <foreach collection="categoryno" item="no" open="(" close=")" separator=",">
+		 #{no}
+		 </foreach>
+	</select>
+	
+	<select id="selectAllNo" resultMap="categoryResult">
+		SELECT CATEGORYNO AS categoryNo,
+		CATEGORYNAME AS categoryName 
+		FROM CATEGORY WHERE CATEGORYNO >= 3
+	</select>
+
+	<select id="selectNo" resultMap="categoryResult" parameterType="String">
+		SELECT CATEGORYNO AS categoryNo,
+		CATEGORYNAME AS categoryName 
+		FROM CATEGORY WHERE CATEGORYNAME = #{category}
+	</select>
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

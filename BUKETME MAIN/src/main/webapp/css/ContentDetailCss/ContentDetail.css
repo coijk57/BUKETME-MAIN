@@ -1,0 +1,431 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+li {
+    list-style: none;
+}
+
+#body{
+    background-color: rgb(26, 29, 41);
+	color: #fff;
+}
+
+.ContentDetail_Play_Button_1{
+	background-color: rgb(26, 29, 41);
+	margin: -100px;
+}
+
+
+#Section{
+	margin:0;
+	width: 100%;
+}
+
+.ContentDetail_MainImg{
+	width: 100%;
+  	
+}
+
+.ContentDetail_Top_Nav{
+	position: absolute;
+	width: 1200px;
+	top: 330px;
+	left:50%;
+	transform: translate(-50%,0);
+}
+
+.ContentDetail_Top_Nav_Button{
+	width: 1200px;
+	height: 80px;
+}
+
+.ContentDetail_Top_Title_H1{
+	font-size: 100px;
+}
+
+.ContentDetail_Play{
+	float: left;
+	
+}
+
+.ContentDetail_Play_Button{
+	cursor: pointer;
+	background:#f1592a;
+	color: white;
+	border: none;
+	width: 150px;
+	height: 80px;
+	text-decoration: none;
+	font-size: 30px;
+	margin-right: 30px;
+	border-radius: 20px;
+}
+
+
+
+.ContentDetail_Like_Hate{
+}
+
+.ContentDetail_Like{
+	float: left;
+	border: none;
+	margin-right: 30px;
+	background-color:  rgb(26, 29, 41);
+}
+.ContentDetail_Hate{
+	float: left;
+	border: none;
+	margin-right: 30px;
+	background-color:  rgb(26, 29, 41);
+}
+
+.Like_o{
+	width: 35px;
+	margin-top: 20px;
+	margin-right: 15px;
+}
+
+.Hate_o{
+	width: 35px;
+	margin-top: 20px;
+}
+
+
+
+
+
+/* 별점 */
+.ContentDetail_Star{
+	background-color:  rgb(26, 29, 41);
+	height: 80px;
+}
+
+#myform{
+	margin-top: 15px;
+}
+
+#myform fieldset{
+    display: inline-block; /* 하위 별점 이미지들이 있는 영역만 자리를 차지함.*/
+    border: 0; /* 필드셋 테두리 제거 */
+}
+#myform input[type=radio]{
+    display: none; /* 라디오박스 감춤 */
+}
+#myform label{
+    font-size: 30px; /* 이모지 크기 */
+    color: transparent; /* 기존 이모지 컬러 제거 */
+    text-shadow: 0 0 0 #f0f0f0; /* 새 이모지 색상 부여 */
+}
+#myform label:hover{
+    text-shadow: 0 0 0 #f1592a; /* 마우스 호버 */
+}
+#myform label:hover ~ label{
+    text-shadow: 0 0 0 #f1592a; /* 마우스 호버 뒤에오는 이모지들 */
+}
+
+#myform fieldset{
+    display: inline-block; /* 하위 별점 이미지들이 있는 영역만 자리를 차지함.*/
+    direction: rtl; /* 이모지 순서 반전 */
+    border: 0; /* 필드셋 테두리 제거 */
+}
+#myform fieldset legend{
+    text-align: left;
+}
+#myform input[type=radio]:checked ~ label{
+    text-shadow: 0 0 0 #f1592a; /* 마우스 클릭 체크 */
+}
+/* 별점 */
+
+
+
+
+
+.ContentDetail_Star{
+	float: left;
+}
+
+/* section*/
+
+.ContentDetail_Content{
+	padding-top:10px;
+	width: 1200px;
+	margin: 0 auto;
+}
+
+
+.ContentDetail_Content_List{
+	padding-top:10px;
+}
+
+ul.ContentDetail_List{
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+ul.ContentDetail_List li{
+	background: none;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+	border-bottom: 3px solid white;
+}
+
+ul.ContentDetail_List li.current{
+	
+}
+
+li.on{
+	background: none;
+	display: inline-block;
+	padding: 10px 15px;
+	cursor: pointer;
+	border-bottom: 3px solid #f1592a;	
+}
+
+
+
+
+
+
+.tab-content{
+	display: none;
+	padding: 15px;
+}
+
+.tab-content.current{
+	display: inherit;
+	padding-bottom: 200px;
+}
+
+#tab-3{
+	width:1200px;
+	height:800px;
+	justify-content: space-between;
+}
+
+.ContentDetail_Content_Recom{
+		background-color: rgb(57, 60, 74);
+		padding: 10px;
+		margin: 15px;
+}
+
+.ContentDetail_Content_Recom_Detail{
+	padding-top: 5px;
+	height: 500xp;
+}
+
+.Recom_Title{
+	font-weight: bold;
+}
+
+.Recom_Detail_plus{
+	width: 20px;
+	margin-left: 5px;
+}
+
+.Recom_age15{
+color: #e46c12;
+font-weight: bold;
+font-size: 20px;
+}
+
+.Open_Day{
+font-weight: bold;
+font-size: 20px;
+}
+
+
+
+
+
+
+/* section*/
+
+.ContentDetail_Content_Explain{
+	width : 1150px;
+	height : 150px;
+	border-bottom: 2px solid white;
+}
+
+.Movie_Num{
+}
+
+
+
+.Explain_List{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+
+.Explain_List > span{
+	margin-right: 30px;
+	
+}
+
+
+.Explain_List_Etc > p{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+
+.ContentDetail_Content_Movie_list{
+	cursor: pointer;
+	margin-top: 15px; 
+	margin-bottom: 15px;
+	border-bottom: 1px solid white;
+	height: 120px;
+}
+
+.ContentDetail_Content_Movie{
+	float: left;
+	margin-right: 15px;
+}
+
+
+
+
+.ContentDetail_Content_Movie > .Movie_Num{
+	font-size: 35px;
+	margin-bottom: 50px;
+}
+
+.imgsize{
+	max-width:180px;
+	height: 101px;	
+}
+
+
+
+
+
+
+
+
+
+.Movie_Explain{
+	
+}
+
+.Movie_Explain > p{
+	margin-top: 20px;
+	margin-right: 20px;
+	padding-left: 20px;
+	display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.Movie_Explain_Title{
+	font-size: 23px;
+}
+
+
+
+
+.ContentDetail_Content_Detail1{
+	width: 50%;
+	float: left;
+	margin-right: 20px;
+}
+
+.ContentDetail_Content_Detail1 > h1{
+padding-bottom: 10px;
+padding-top: 10px;
+}
+
+.ContentDetail_Content_Detail2_3{
+	width: 45%;
+	float: left;
+}
+
+.ContentDetail_Content_Detail2{
+	width: 50%;
+	float: left;
+}
+
+.ContentDetail_Content_Detail2 > h1{
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+
+
+.ContentDetail_Content_Detail3{
+	width: 50%;
+	float: left;
+}
+
+.ContentDetail_Content_Detail3 > h1{
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+
+
+.ContentDetail_Content_Recom{
+    cursor: pointer;
+	width: 250px;
+	float: left;
+}
+
+.ContentDetail_Content_Recom_Img{
+	width: 250px;
+}
+
+.Recom_imgsize{
+	width: 100%;
+	height: 140px;
+}
+
+
+
+
+
+
+
+
+#ViewCountRatings {
+	display: flex;
+	width: 1100px;
+    margin: auto;
+  	padding-top: 100px;
+}
+
+
+#ViewCount {
+	width: 50%;
+	margin: 0 50px 0 0;
+}
+
+#Ratings {
+	width: 50%;
+	margin: 0 0 0 50px;
+}
+
+
+
+
+.contents {
+	height: 65px;
+	display: -webkit-box;
+    overflow: hidden;
+	-webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}

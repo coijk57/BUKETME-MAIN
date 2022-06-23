@@ -1,0 +1,200 @@
+body {
+  font-family: "Noto Sans KR", sans-serif;
+    
+}
+
+a {
+   text-decoration: none;
+    color: #000000;
+}
+
+a:hover {
+   text-decoration: none;
+    color: #000000;
+}
+
+h1, h2, h3, h4, h5, h6, .font-primary {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.main {
+	font-size: 25px;
+	text-align: center;
+	 text-decoration: none;
+    color: #000000;
+}
+.sidebar {
+    list-style: none;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	justify-content: center;
+	float:center;
+	 
+}
+
+
+.searchbar input {
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: 1px solid lightgray;
+    outline: none;
+}
+
+.searchbar submit {
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    border: 1px solid lightgray;
+    outline: none;
+    color: #ff6768;
+}
+
+.tags {
+	display: flex;
+	margin: 1%;
+	padding:1%;
+}
+
+.sidebar-title {
+  font-size: 20px;
+  text-align: left;
+  padding: 1%;
+  margin: 1%;
+   text-decoration: none;
+    color: #000000;
+}
+
+.tags > .box {
+	flex: 25%;
+	justify-content: center;
+}
+
+.tags ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+h4 {
+	text-align: center;
+}
+
+.tags ul li {
+  display: inline-block;
+}
+
+.tags ul a {
+   background-color: #f1592a;
+  font-size: 14px;
+  padding: 6px 14px;
+  margin: 0 6px 8px 0;
+  border: 1px solid #f1592a;
+  display: inline-block;
+  transition: 0.3s;
+   text-decoration: none;
+    color: #fff;
+}
+
+.tags ul a:hover {
+  color: #000000;
+  border: 1px solid #000000;
+  background: #ff6768;
+}
+
+.block {
+	margin: 15%;
+}
+
+.login-header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    border-bottom: transparent;
+    background-color: rgb(26, 29, 41);
+}
+
+.logo-area {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.logo-icon {
+    font-size: 30px;
+    font-weight: 900;
+    color: #f1592a;
+}
+
+.manage {
+	display: flex;
+	background-color:  rgb(26, 29, 41);
+}
+
+.manage ul {
+  list-style: none;
+  padding: 0;
+  list-style-type: none;
+   text-decoration: none;
+    color: #fff;
+}
+
+.manage ul li {
+  display: inline-block;
+  list-style-type: none;
+   text-decoration: none;
+    color: #fff;
+}
+
+.manage ul a {
+   background-color: #f1592a;
+  font-size: 14px;
+  padding: 6px 14px;
+  margin: 0 6px 8px 0;
+  border: 1px solid #f1592a;
+  display: inline-block;
+  transition: 0.3s;
+   text-decoration: none;
+    color: #fff;
+}
+
+.manage ul a:hover {
+  color: #000000;
+  border: 1px solid #000000;
+  background: #ff6768;
+}
+
+.manage ul a span {
+  padding-left: 5px;
+  color: #ff6768;
+  font-size: 14px;
+}
+
+.manage > .manage_box {
+	margin: 1%;
+	display: flex;
+	flex: 25%;
+	justify-content: right;
+}
+
+.manage > .manage_list {
+	margin: 1.5%;
+	justify-content: left;
+}
+
+.updown1 { 
+	width:3px; 
+	border-right:1px solid black; 
+	padding-right:5%;
+	}
+	
+.updown2 { 
+	padding-left:5%;
+	}
